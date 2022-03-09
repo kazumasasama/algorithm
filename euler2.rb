@@ -4,6 +4,7 @@
 
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+# my solution =========
 prev_number = 1
 number = 2
 sum = 0
@@ -23,3 +24,13 @@ while number < 4_000_000
 end
 
 p sum
+
+
+# better solution from the website =========
+x, y, sum = 1, 1, 0
+while sum < 4_000_000
+  sum += (x + y)
+  x, y = x + 2*y, 2*x + 3*y
+end
+
+puts "Sum is #{ sum }."
