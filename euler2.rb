@@ -4,3 +4,22 @@
 
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+prev_number = 1
+number = 2
+sum = 0
+
+if number < 4_000_000 && number.even?
+  sum += number
+end
+
+while number < 4_000_000
+  next_number = prev_number + number
+  prev_number = number
+  number = next_number
+  
+  if number < 4_000_000 && number.even?
+    sum += number
+  end
+end
+
+p sum
