@@ -4,3 +4,5 @@
 
 # What is the 10 001st prime number?
 
+require 'prime'
+p (Prime.first 10_001).last
